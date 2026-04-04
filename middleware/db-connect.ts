@@ -12,7 +12,7 @@ if (!cached) {
     cached = global.mongoose = {conn: null, promise: null};
 }
 
-async function dbConnect(): Promise<typeof mongoose> {
+async function dbConnect(): Promise<any> {
     if (cached.conn) {
         return cached.conn;
     }
@@ -28,8 +28,8 @@ async function dbConnect(): Promise<typeof mongoose> {
         cached.promise = mongoose
         .connect(MONGO_URI, opts)
         .then((mongoose) => mongoose)
-        .catch((err) => {
-            throw new Error (String(err))
+        .catch((err: any) => {
+            throw new Error(String(err));
         });
     }
 

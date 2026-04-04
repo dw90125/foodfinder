@@ -2,7 +2,7 @@ services:
     backend:
         container_name: foodfinder-backend
         image: mongo:latest
-        restart: always
+        restart: unless-stopped
         environment:
             DB_NAME: foodfinder
             MONGO_INITDB_DATABASE: foodfinder

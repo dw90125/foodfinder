@@ -8,10 +8,9 @@ async function findLocations(filter: FilterLocationType | FilterWishlistType | {
     try {
         const result: Array<LocationType | undefined> = await Locations.find(filter);
         return result as LocationType[];
-    } catch (error) {
-        console.log(error);
+    } catch (err) {
+        console.log(err);
     }
-
     return [];
 }
 
@@ -20,7 +19,7 @@ export async function findAllLocations(): Promise<LocationType[] | []> {
     return await findLocations(filter);
 }
 
-export async function findLocationById(location_ids: string[]): Promise<LocationType[] | []> {
+export async function findLocationsById(location_ids: string[]): Promise<LocationType[] | []> {
     const filter: FilterLocationType = {
         location_id: location_ids,
     };
@@ -40,17 +39,18 @@ export async function onUserWishList(user_id: string): Promise<LocationType[] | 
 export async function updateWishlist(
     location_id: string,
     user_id: string,
-    action: string,
-): Promise<LocationType[] | null | {}> {
+    action: string
+): Promise<LocationType | null | {}> {
     const filter = {
-        location_id: location_id,
+        location_id: location_id
     };
     const options: QueryOptions = {
         upsert: true,
-        returnDocument: "after",
+        returnDocument: "after"
     };
 
     let update = {};
+
     if (action === "add") {
         update = {$push: { on_wishlist: user_id } };
     } else if (action === "remove") {
