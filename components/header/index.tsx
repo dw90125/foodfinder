@@ -2,7 +2,7 @@ import styles from "./index.module.css";
 import Logo from "@/components/header/logo";
 import AuthElement from "@/components/header/auth-element";
 
-const Header = (): JSX.Element => {
+const Header = (): React.JSX.Element => {
     return (
         <header className={styles.root}>
             <div className="layout-grid">

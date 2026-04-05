@@ -3,7 +3,7 @@ import Link from "next/link";
 import logo from "@/public/assets/logo.svg";
 import styles from "./index.module.css";
 
-const Logo = (): JSX.Element => {
+const Logo = (): React.JSX.Element => {
     return (
         <Link href="/" passHref className={styles.root}>
             <Image
