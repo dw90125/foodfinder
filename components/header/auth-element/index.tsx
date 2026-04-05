@@ -3,7 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Button from "@/components/button";
 import styles from "./index.module.css";
 
-const AuthElement = (): JSX.Element => {
+const AuthElement = (): React.JSX.Element => {
     const { data: session, status } = useSession();
 
     return (

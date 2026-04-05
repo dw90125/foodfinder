@@ -8,7 +8,7 @@ interface PropsInterface {
     clickHandler?: () => any;
 }
 
-const Button = (props: PropsInterface): JSX.Element => {
+const Button = (props: PropsInterface): React.JSX.Element => {
     const { children, variant, disabled, clickHandler } = props;
 
     const renderContent = (children: React.ReactNode) => {

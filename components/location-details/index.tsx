@@ -14,12 +14,12 @@ interface WishlistInterface {
     userId: string;
 }
 
-const LocationDetail = (props: PropsInterface): JSX.Element => {
+const LocationDetail = (props: PropsInterface): React.JSX.Element => {
     const location: LocationType = props.location;
 
     const { data: session } = useSession();
-    const [onWishlist, setOnWishlist] = useState<Boolean>(false);
-    const [loading, setLoading] = useState<Boolean>(false);
+    const [onWishlist, setOnWishlist] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const userId = session?.user.fdlst_private_userId;

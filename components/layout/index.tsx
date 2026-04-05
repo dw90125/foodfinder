@@ -4,7 +4,7 @@ interface PropsInterface {
     children: React.ReactNode;
 }
 
-const Layout = (props: PropsInterface): JSX.Element => {
+const Layout = (props: PropsInterface): React.JSX.Element => {
     return (
         <>
             <Header />
