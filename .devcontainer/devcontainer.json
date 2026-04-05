@@ -1,6 +1,6 @@
 {
   "name": "Next.js 13 & Mongo 6 Environment",
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "../docker-compose.dev.yml",
   "service": "application",
   "workspaceFolder": "/usr/src/next",
   "customizations": {
