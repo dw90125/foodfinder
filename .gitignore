@@ -1,4 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+docker-compose.dev.yml
+/.devcontainer
 
 # dependencies
 /node_modules
@@ -40,5 +41,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-docker-compose.dev.yml
-.devcontainer/devcontainer.json
