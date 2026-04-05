@@ -8,6 +8,6 @@ The project employs a full-stack demonstration of a simple restaurant-locator ap
 * **Runtime:** Node.js
 * **Language:** TypeScript (ES6+)
 * **Database:** Mongodb / Mongoose
-* **Application:** Next.js
+* **Application:** Next.js / GraphQL
 * **Environment:** WSL2 (Ubuntu) / Docker
 * **Testing:** Jest

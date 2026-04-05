@@ -1,4 +1,4 @@
-import { findAllLocations, findLocationById, onUserWishList } from "@/mongoose/locations/services";
+import { findAllLocations, findLocationById, onUserWishlist } from "@/mongoose/locations/services";
 
 export const locationQueries = {
     allLocations: async (_: any) => {
@@ -8,6 +8,6 @@ export const locationQueries = {
         return await findLocationsById(param.location_ids);
     },
     onUserWishlist: async (_: any, param: { user_id: string }) => {
-        return await onUserWishList(param.user_id);
+        return await onUserWishlist(param.user_id);
     },
 };

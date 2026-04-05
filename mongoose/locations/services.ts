@@ -26,7 +26,7 @@ export async function findLocationsById(location_ids: string[]): Promise<Locatio
     return await findLocations(filter);
 }
 
-export async function onUserWishList(user_id: string): Promise<LocationType[] | []> {
+export async function onUserWishlist(user_id: string): Promise<LocationType[] | []> {
     const filter: FilterWishlistType = {
         on_wishlist: {
             $in: [user_id],
