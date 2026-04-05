@@ -1,4 +1,4 @@
-import { findAllLocations, findLocationById, onUserWishlist } from "@/mongoose/locations/services";
+import { findAllLocations, findLocationsById, onUserWishlist } from "@/mongoose/locations/services";
 
 export const locationQueries = {
     allLocations: async (_: any) => {

@@ -23,10 +23,10 @@ const LocationDetail = (props: PropsInterface): React.JSX.Element => {
 
     useEffect(() => {
         const userId = session?.user.fdlst_private_userId;
-        setOnWishlist(
-            userId && location.on_wishlist.includes(userId) ? true : false
+        setOnWishlist (
+            userId && location?.on_wishlist && location.on_wishlist.includes(userId) ? true : false
         );
-    }, [session]);
+    }, [session, location]);
 
     const wishlistAction = (props: WishlistInterface) => {
         const { locationId, userId } = props;
