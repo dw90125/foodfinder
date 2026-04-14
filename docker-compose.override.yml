@@ -1,0 +1,39 @@
+services:
+  application:
+    depends_on:
+      - backend
+    command: "npm run dev"
+    environment:
+      - NODE_ENV=DEV
+
+  backend:
+    container_name: foodfinder-backend
+    image: mongo:latest
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_DB_NAME}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
+    ports:
+      - "${DB_PORT:-27017}:27017"
+    volumes:
+      - ./.docker/foodfinder-backend/seed-mongodb.js:/docker-entrypoint-initdb.d/seed-mongodb.js
+      - mongodb_data_container:/data/db
+
+  jest:
+    container_name: foodfinder-jest
+    image: node:22-alpine
+    working_dir: /usr/src/next
+    volumes:
+      - .:/usr/src/next
+    depends_on:
+      - backend
+      - application
+    environment:
+      - NODE_ENV=test
+    tty: true
+    command: "npm run testWatch"
+
+volumes:
+  mongodb_data_container:
+

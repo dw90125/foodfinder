@@ -1,0 +1,20 @@
+{
+  "name": "Next.js 13 & Mongo 6 Environment",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "../docker-compose.override.yml"
+  ],
+  "service": "application",
+  "workspaceFolder": "/usr/src/next",
+  "runServices": ["application", "backend", "jest"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "mongodb.mongodb-vscode",
+        "google.geminicodeassist"
+      ]
+    }
+  }
+}
+

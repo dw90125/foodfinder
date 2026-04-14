@@ -1,0 +1,7 @@
+services:
+  application:
+    restart: always
+    command: "npm run start"
+    environment:
+      - NODE_ENV=PROD
+
